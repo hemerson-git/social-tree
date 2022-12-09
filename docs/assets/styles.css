@@ -20,6 +20,35 @@ body {
   background-color: var(--primary-900);
 }
 
+header {
+  max-width: 920px;
+  margin: 0 auto;
+  height: 40px;
+  margin-top: 32px;
+  position: relative;
+}
+
+header button#share {
+  position: absolute;
+  right: 16px;
+  z-index: 10;
+  background-color: transparent;
+  border: 1px solid var(--primary-100);
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+
+  cursor: pointer;
+}
+
+header button#share img {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
 main {
   display: flex;
   align-items: center;
@@ -27,7 +56,7 @@ main {
   flex-direction: column;
 
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: calc(100vh - 32px - 40px);
 
   position: relative;
   z-index: 3;
@@ -35,13 +64,46 @@ main {
 }
 
 main footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 0 16px;
+  position: relative;
+  max-width: 920px;
+  width: 100%;
+  height: 2.5rem;
+  overflow: hidden;
+}
+
+.toast {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 4px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast h3 {
+  font-size: 1.125rem;
+}
+
+.toast span {
+  font-size: 0.875rem;
+}
+
+.toast-success {
+  background-color: var(--success-300);
+  color: white;
 }
 
 main #profile-img img {
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 140px;
   border: 8px solid var(--primary-900);
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -51,6 +113,13 @@ main #profile-img img {
   box-shadow: 0 0 0 3px var(--primary-300);
 
   margin-bottom: 1rem;
+}
+
+@media (max-width: 720px) {
+  main #profile-img img {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 section.insta {
@@ -111,6 +180,7 @@ a.custom-link {
   text-transform: uppercase;
   color: var(--primary-100);
   border: 1px solid var(--primary-300);
+  background-color: var(--primary-900);
   height: 2.5rem;
   width: 20.375rem;
   max-width: 100%;
@@ -127,6 +197,7 @@ a.custom-link {
 a.custom-link:hover {
   background-color: var(--primary-300);
   color: var(--primary-900);
+  z-index: 2;
 }
 
 .custom-link img {
