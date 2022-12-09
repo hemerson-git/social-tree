@@ -17,23 +17,39 @@ async function shareSocialTree() {
   const errorBackground =
     "linear-gradient(to right, var(--danger-300), var(--danger-500))";
 
-  if (!isMobile) {
-    try {
-      await navigator.clipboard.writeText(url);
-      showToastMessage(`Link copied to clipboard!`, {
-        background: successBackground,
-      });
-    } catch (e) {
-      showToastMessage(
-        "Could not copy this link to clipboard, please try again!",
-        {
-          background: errorBackground,
-        }
-      );
-    }
+  // if (!isMobile) {
+  //   try {
+  //     await navigator.clipboard.writeText(url);
+  //     showToastMessage(`Link copied to clipboard!`, {
+  //       background: successBackground,
+  //     });
+  //   } catch (e) {
+  //     showToastMessage(
+  //       "Could not copy this link to clipboard, please try again!",
+  //       {
+  //         background: errorBackground,
+  //       }
+  //     );
+  //   }
 
-    return;
+  //   return;
+  // }
+
+  // if (isMobile) {
+  try {
+    await navigator.share({
+      title: "Hemerson Social Tree",
+      text: "Share this link",
+      url,
+      files: [],
+    });
+  } catch (e) {
+    showToastMessage(
+      "Something went wrong while sharing this link, please try again!",
+      { background: errorBackground }
+    );
   }
+  // }
 }
 
 function showToastMessage(msg, style) {
