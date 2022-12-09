@@ -11,10 +11,19 @@
   --secondary-600: #5f8db8;
   --secondary-700: #174168;
 
-  --green-700: #1d7d1c;
-  --green-500: #279e25;
-  --green-300: #7bc47a;
+  --success-700: #1d7d1c;
+  --success-500: #279e25;
+  --success-300: #7bc47a;
 
+  --danger-200: #db5461;
+  --danger-300: #fb3640;
+  --danger-500: #f71735;
+  --danger-900: #a8201a;
+
+  --warning-500: #fabc2a;
+  --warning-700: #ec9a29;
+
+  --gray-900: #12130f;
   --gray-700: #443c4d;
   --gray-600: #73687d;
   --gray-500: #8e8697;

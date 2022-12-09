@@ -16,6 +16,10 @@
   <script src="./assets/js/particles.js"></script>
   <script src="./assets/js/scripts.js" defer></script>
 
+  <!-- TOASTIFY -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+
   <title>Social Tree</title>
 
   <!-- Google Fonts -->
@@ -32,6 +36,12 @@
 </head>
 
 <body>
+  <header>
+    <button id="share">
+      <img src="./assets/imgs/share.svg" alt="Share Icon">
+    </button>
+  </header>
+
   <main>
     <div id="particles-js"></div>
     <section class=" insta">
@@ -40,31 +50,30 @@
           alt="Picture of Hemerson Using glasses and with a hand under his chin" />
       </picture>
 
-      <a href="https://www.instagram.com/hemerson.oliveira" target="_blank" rel="noopener">
-        <span>@hemerson.oliveira</span>
+      <a href="https://www.instagram.com/hemerson_dev" target="_blank" rel="noopener">
+        <span>@hemerson_dev</span>
       </a>
     </section>
 
-    <section class="links">
-      <a href="https://hemerson-dev.vercel.app" class="custom-link" target="_blank">
+    <section class="links" link-title="Portfolio">
+      <a href="https://hemerson-dev.vercel.app" class="custom-link" target="_blank" link-title="Portfolio">
         Portfolio
       </a>
 
-      <a href="#" class="custom-link">
+      <a href="#" class="custom-link" link-title="Speed Coding">
         <img src="./assets/imgs/tiktok.svg" alt="Tiktok Logo">
         Speed Coding
       </a>
 
-      <a href="https://github.com/hemerson-git/css-tips" class="custom-link" target="_blank">
+      <a href="https://github.com/hemerson-git/css-tips" class="custom-link" target="_blank" link-title="CSS Tips">
         CSS Tips
       </a>
 
-      <a href="#" class="custom-link">lorem-ipsum-4</a>
+      <a href="#" class="custom-link" link-title="lorem-ipsum-4">lorem-ipsum-4</a>
     </section>
 
     <section class="social">
-      <a href="https://www.instagram.com/hemerson.oliveira" target="_blank" rel="noopener"
-        aria-label="link to instagram">
+      <a href="https://www.instagram.com/hemerson_dev" target="_blank" rel="noopener" aria-label="link to instagram">
         <img src="./assets/imgs/instagram.svg" alt="Ícone do Instagram">
       </a>
 
@@ -86,7 +95,6 @@
       <span>Made with 💜 by Hemerson</span>
     </footer>
   </main>
-
 </body>
 
 </html>
