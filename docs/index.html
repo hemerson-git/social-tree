@@ -16,32 +16,32 @@
     <meta property="og:image" content="https://github.com/hemerson-git.png" />
     <meta name="twitter:card" content="summary" />
 
-    <meta name="theme-color" content="#1b1b1b" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#f2f1ec" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1b1b1b" />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231b1b1b'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='monospace' font-weight='700' font-size='30' fill='%237ea8a7'%3EH%3C/text%3E%3C/svg%3E"
     />
 
-    <!-- Theme before first paint: saved choice, else the system setting -->
+    <!-- Theme before first paint: the visitor's saved choice, else dark -->
     <script>
       (function () {
         var saved = null;
         try {
           saved = localStorage.getItem("theme");
         } catch (e) {}
-        var prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
-        document.documentElement.setAttribute("data-theme", saved || (prefersLight ? "light" : "dark"));
+        var theme = saved === "light" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", theme);
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", theme === "light" ? "#f2f1ec" : "#1b1b1b");
       })();
     </script>
 
     <!-- Hemerson Design System, straight from npm -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hemerson/design-system@0.2/dist/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hemerson/design-system@0.2.0/dist/styles.css" />
     <link rel="stylesheet" href="./assets/styles.css" />
     <script src="./assets/js/scripts.js" defer></script>
     <!-- Edge lens on the glass, like Apple's Liquid Glass (Chromium only; other browsers keep frosted glass) -->
     <script type="module">
-      import { enableGlassRefraction } from "https://cdn.jsdelivr.net/npm/@hemerson/design-system@0.2/dist/glass.js";
+      import { enableGlassRefraction } from "https://cdn.jsdelivr.net/npm/@hemerson/design-system@0.2.0/dist/glass.js";
 
       enableGlassRefraction();
     </script>

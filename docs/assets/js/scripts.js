@@ -14,6 +14,7 @@ function currentTheme() {
 
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", theme === "light" ? "#f2f1ec" : "#1b1b1b");
   const next = theme === "dark" ? "light" : "dark";
   themeToggle.setAttribute("aria-label", `Switch to ${next} theme`);
 }
