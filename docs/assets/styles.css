@@ -71,6 +71,10 @@ body {
   min-height: 48px;
   padding: var(--space-1) var(--space-1) var(--space-1) var(--space-4);
   border-radius: var(--radius-full);
+  /* Lighter than regular glass (80%), so the bar reads as glass. Measured on this page
+     with the photo scrolled under the bar: text stays at 5.7:1 (dark) and 6.7:1 (light).
+     Re-measure if the page gains bright content near the top. */
+  --glass-regular-tint: color-mix(in srgb, var(--surface) 30%, transparent);
 }
 
 .toolbar-name {
