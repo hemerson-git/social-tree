@@ -1,66 +1,70 @@
-document.addEventListener("DOMContentLoaded", () => {
-  particlesJS.load("particles-js", "assets/particles.json", function () {
-    console.log("callback - particles.js config loaded");
-  });
+const themeToggle = document.querySelector("#theme-toggle");
+const shareButton = document.querySelector("#share");
+const toastRegion = document.querySelector("#toast-region");
+const toastTitle = document.querySelector("#toast-title");
+const toastDescription = document.querySelector("#toast-description");
 
-  // Share Icon
-  const btnShare = document.querySelector("#share");
+document.querySelector("#year").textContent = String(new Date().getFullYear());
 
-  btnShare.addEventListener("click", async () => shareSocialTree());
+/* ---------- Theme ---------- */
+
+function currentTheme() {
+  return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  const next = theme === "dark" ? "light" : "dark";
+  themeToggle.setAttribute("aria-label", `Switch to ${next} theme`);
+}
+
+applyTheme(currentTheme());
+
+themeToggle.addEventListener("click", () => {
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  applyTheme(next);
+  try {
+    localStorage.setItem("theme", next);
+  } catch {
+    // Private windows may block storage; the theme still changes for this visit
+  }
 });
 
-async function shareSocialTree() {
-  const isMobile = innerWidth <= 720;
-  const url = location.href;
-  const successBackground =
-    "linear-gradient(to right, var(--success-300), var(--success-500))";
-  const errorBackground =
-    "linear-gradient(to right, var(--danger-300), var(--danger-500))";
+/* ---------- Share ---------- */
 
-  // if (!isMobile) {
-  //   try {
-  //     await navigator.clipboard.writeText(url);
-  //     showToastMessage(`Link copied to clipboard!`, {
-  //       background: successBackground,
-  //     });
-  //   } catch (e) {
-  //     showToastMessage(
-  //       "Could not copy this link to clipboard, please try again!",
-  //       {
-  //         background: errorBackground,
-  //       }
-  //     );
-  //   }
+let toastTimer;
 
-  //   return;
-  // }
+function showToast(title, description) {
+  toastTitle.textContent = title;
+  toastDescription.textContent = description;
+  toastRegion.hidden = false;
+  window.clearTimeout(toastTimer);
+  toastTimer = window.setTimeout(() => {
+    toastRegion.hidden = true;
+  }, 4000);
+}
 
-  // if (isMobile) {
-  try {
-    await navigator.share({
-      title: "Hemerson Social Tree",
-      text: "Share this link",
-      url,
-      files: [],
-    });
-  } catch (e) {
-    showToastMessage(
-      "Something went wrong while sharing this link, please try again!",
-      { background: errorBackground }
-    );
+shareButton.addEventListener("click", async () => {
+  const shareData = {
+    title: "Hemerson Oliveira · Links",
+    text: "Portfolio, design system, projects and contact.",
+    url: location.href,
+  };
+
+  // Phones get the native share sheet; everyone else gets the link copied
+  if (navigator.share && navigator.canShare?.(shareData)) {
+    try {
+      await navigator.share(shareData);
+      return;
+    } catch (error) {
+      if (error.name === "AbortError") return;
+    }
   }
-  // }
-}
 
-function showToastMessage(msg, style) {
-  Toastify({
-    text: msg,
-    position: "right",
-    gravity: "bottom",
-    stopOnFocus: true,
-    style: {
-      borderRadius: ".5rem",
-      ...style,
-    },
-  }).showToast();
-}
+  try {
+    await navigator.clipboard.writeText(location.href);
+    showToast("Link copied", "Paste it anywhere to share this page.");
+  } catch {
+    showToast("Couldn't copy the link", location.href);
+  }
+});
