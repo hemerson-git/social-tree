@@ -1,100 +1,155 @@
 <!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-<html lang="en">
+    <title>Hemerson Oliveira · Links</title>
+    <meta name="description" content="Hemerson Oliveira, full stack developer: portfolio, design system, projects and contact." />
+    <meta name="author" content="Hemerson Oliveira" />
+    <link rel="canonical" href="https://hemerson-git.github.io/social-tree/" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Hemerson Oliveira · Links" />
+    <meta property="og:description" content="Full stack developer: portfolio, design system, projects and contact." />
+    <meta property="og:url" content="https://hemerson-git.github.io/social-tree/" />
+    <meta property="og:image" content="https://github.com/hemerson-git.png" />
+    <meta name="twitter:card" content="summary" />
 
-  <meta name="description" content="Social Tree Project for Hemerson Oliveira">
-  <meta name="author" content="Hemerson Oliveira">
+    <meta name="theme-color" content="#1b1b1b" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f2f1ec" media="(prefers-color-scheme: light)" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231b1b1b'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='monospace' font-weight='700' font-size='30' fill='%237ea8a7'%3EH%3C/text%3E%3C/svg%3E"
+    />
 
-  <meta property="og:image" content="https://github.com/hemerson-git" />
-  <meta property="og:title" content="Social Tree | Hemerson Oliveira" />
+    <!-- Theme before first paint: saved choice, else the system setting -->
+    <script>
+      (function () {
+        var saved = null;
+        try {
+          saved = localStorage.getItem("theme");
+        } catch (e) {}
+        var prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+        document.documentElement.setAttribute("data-theme", saved || (prefersLight ? "light" : "dark"));
+      })();
+    </script>
 
-  <script src="./assets/js/particles.js"></script>
-  <script src="./assets/js/scripts.js" defer></script>
+    <!-- Hemerson Design System, straight from npm -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hemerson/design-system@0.1/dist/styles.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <script src="./assets/js/scripts.js" defer></script>
+  </head>
 
-  <!-- TOASTIFY -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+  <body class="hds-root">
+    <div class="backdrop" aria-hidden="true">
+      <span class="backdrop-shape backdrop-shape--primary"></span>
+      <span class="backdrop-shape backdrop-shape--secondary"></span>
+    </div>
 
-  <title>Social Tree</title>
+    <div class="page">
+      <header class="toolbar hds-glass">
+        <span class="toolbar-name">hemerson.dev</span>
+        <div class="toolbar-actions">
+          <button type="button" class="hds-btn hds-btn--ghost hds-btn--icon hds-btn--sm" id="theme-toggle" aria-label="Switch to light theme" title="Switch theme">
+            <svg class="hds-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="hds-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+          <button type="button" class="hds-btn hds-btn--ghost hds-btn--icon hds-btn--sm" id="share" aria-label="Share this page" title="Share">
+            <svg class="hds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98m-.01-10.98-6.82 3.98"/></svg>
+          </button>
+        </div>
+      </header>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <main>
+        <section class="profile" aria-labelledby="name">
+          <span class="hds-avatar" style="width: 112px; height: 112px">
+            <span class="hds-avatar-glow" aria-hidden="true"></span>
+            <img class="hds-avatar-image" src="https://github.com/hemerson-git.png" alt="Hemerson Oliveira" width="112" height="112" />
+          </span>
+          <h1 id="name" class="profile-name">Hemerson Oliveira</h1>
+          <p class="profile-role">Full Stack Developer</p>
+          <p class="profile-bio">7+ years building reliable, maintainable web applications with React, Next.js, TypeScript and Node.js.</p>
+        </section>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap"
-    rel="stylesheet" />
+        <section class="links" aria-labelledby="links-title">
+          <h2 id="links-title" class="eyebrow">Links</h2>
+          <ul>
+            <li>
+              <a class="link-card hds-card hds-card--interactive" href="https://hemerson-dev.vercel.app" target="_blank" rel="noopener">
+                <span class="link-icon" aria-hidden="true">
+                  <svg class="hds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </span>
+                <span class="link-text">
+                  <span class="link-title">Portfolio</span>
+                  <span class="link-description">Projects, experience and how I work</span>
+                </span>
+                <svg class="hds-icon link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+                <span class="hds-visually-hidden">(opens in a new tab)</span>
+              </a>
+            </li>
+            <li>
+              <a class="link-card hds-card hds-card--interactive" href="https://hemerson-git.github.io/hemerson-design-system/" target="_blank" rel="noopener">
+                <span class="link-icon" aria-hidden="true">
+                  <svg class="hds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg>
+                </span>
+                <span class="link-text">
+                  <span class="link-title">Design System</span>
+                  <span class="link-description">Liquid-glass React components, live in Storybook</span>
+                </span>
+                <svg class="hds-icon link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+                <span class="hds-visually-hidden">(opens in a new tab)</span>
+              </a>
+            </li>
+            <li>
+              <a class="link-card hds-card hds-card--interactive" href="https://github.com/hemerson-git/css-tips" target="_blank" rel="noopener">
+                <span class="link-icon" aria-hidden="true">
+                  <svg class="hds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+                </span>
+                <span class="link-text">
+                  <span class="link-title">CSS Tips</span>
+                  <span class="link-description">Short, practical CSS techniques</span>
+                </span>
+                <svg class="hds-icon link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+                <span class="hds-visually-hidden">(opens in a new tab)</span>
+              </a>
+            </li>
+          </ul>
+        </section>
 
-  <!-- End Google Fonts -->
+        <nav class="social" aria-label="Social profiles">
+          <a class="hds-btn hds-btn--ghost hds-btn--icon" href="https://github.com/hemerson-git" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg class="hds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a class="hds-btn hds-btn--ghost hds-btn--icon" href="https://www.linkedin.com/in/hemerson-silva-869137186/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg class="hds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="hds-btn hds-btn--ghost hds-btn--icon" href="https://www.instagram.com/hemerson_dev" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg class="hds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+          <a class="hds-btn hds-btn--ghost hds-btn--icon" href="mailto:hemersondev@gmail.com" aria-label="Email" title="hemersondev@gmail.com">
+            <svg class="hds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </nav>
+      </main>
 
-  <link rel="stylesheet" href="./assets/styles.css">
-</head>
+      <footer class="footer">
+        <p>© <span id="year">2026</span> Hemerson Oliveira</p>
+        <p>
+          Built with
+          <a href="https://www.npmjs.com/package/@hemerson/design-system" target="_blank" rel="noopener">Hemerson Design System</a>
+        </p>
+      </footer>
+    </div>
 
-<body>
-  <header>
-    <button id="share">
-      <img src="./assets/imgs/share.svg" alt="Share Icon">
-    </button>
-  </header>
-
-  <main>
-    <div id="particles-js"></div>
-    <section class=" insta">
-      <picture id="profile-img">
-        <img src="https://github.com/hemerson-git.png"
-          alt="Picture of Hemerson Using glasses and with a hand under his chin" />
-      </picture>
-
-      <a href="https://www.instagram.com/hemerson_dev" target="_blank" rel="noopener">
-        <span>@hemerson_dev</span>
-      </a>
-    </section>
-
-    <section class="links" link-title="Portfolio">
-      <a href="https://hemerson-dev.vercel.app" class="custom-link" target="_blank" link-title="Portfolio">
-        Portfolio
-      </a>
-
-      <a href="#" class="custom-link" link-title="Speed Coding">
-        <img src="./assets/imgs/tiktok.svg" alt="Tiktok Logo">
-        Speed Coding
-      </a>
-
-      <a href="https://github.com/hemerson-git/css-tips" class="custom-link" target="_blank" link-title="CSS Tips">
-        CSS Tips
-      </a>
-
-      <a href="#" class="custom-link" link-title="lorem-ipsum-4">lorem-ipsum-4</a>
-    </section>
-
-    <section class="social">
-      <a href="https://www.instagram.com/hemerson_dev" target="_blank" rel="noopener" aria-label="link to instagram">
-        <img src="./assets/imgs/instagram.svg" alt="Ícone do Instagram">
-      </a>
-
-      <a href="https://www.linkedin.com/in/hemerson-silva-869137186/" target="_blank" rel="noopener"
-        aria-label="link to linkedin">
-        <img src="./assets/imgs/linkedin.svg" alt="Ícone do LinkedIn">
-      </a>
-
-      <a href="mailto:hemersondev@gmail.com">
-        <img src="./assets/imgs/mail.svg" alt="Ícone de email">
-      </a>
-
-      <a href="https://github.com/hemerson-git">
-        <img src="./assets/imgs/github.svg" alt="Ícone do Github">
-      </a>
-    </section>
-
-    <footer>
-      <span>Made with 💜 by Hemerson</span>
-    </footer>
-  </main>
-</body>
-
+    <div class="hds-toast-region" hidden id="toast-region">
+      <div class="hds-glass hds-toast hds-toast--success" role="status">
+        <svg class="hds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        <div class="hds-toast-body">
+          <p class="hds-toast-title" id="toast-title">Link copied</p>
+          <p class="hds-toast-description" id="toast-description">Paste it anywhere to share this page.</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
