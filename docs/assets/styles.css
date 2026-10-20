@@ -71,10 +71,6 @@ body {
   min-height: 48px;
   padding: var(--space-1) var(--space-1) var(--space-1) var(--space-4);
   border-radius: var(--radius-full);
-  /* Lighter than regular glass (80%), so the bar reads as glass. Measured on this page
-     with the photo scrolled under the bar: text stays at 5.7:1 (dark) and 6.7:1 (light).
-     Re-measure if the page gains bright content near the top. */
-  --glass-regular-tint: color-mix(in srgb, var(--surface) 30%, transparent);
 }
 
 .toolbar-name {
@@ -88,6 +84,14 @@ body {
 .toolbar-actions {
   display: flex;
   gap: var(--space-1);
+}
+
+/* In the light theme the photo scrolls under the bar as dark content, darker than the
+   mid-grey the design system's 20% light glass is made for. Measured with the photo
+   under the bar: 50% keeps the text at 5.9:1 (the default gives 2.7:1). The dark theme
+   keeps the default glass, at 4.8:1. */
+[data-theme="light"] .toolbar {
+  --glass-regular-tint: color-mix(in srgb, var(--surface) 50%, transparent);
 }
 
 /* Capsule controls inside the capsule bar stay concentric */

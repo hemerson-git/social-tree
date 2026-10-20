@@ -36,9 +36,15 @@
     </script>
 
     <!-- Hemerson Design System, straight from npm -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hemerson/design-system@0.1/dist/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hemerson/design-system@0.2/dist/styles.css" />
     <link rel="stylesheet" href="./assets/styles.css" />
     <script src="./assets/js/scripts.js" defer></script>
+    <!-- Edge lens on the glass, like Apple's Liquid Glass (Chromium only; other browsers keep frosted glass) -->
+    <script type="module">
+      import { enableGlassRefraction } from "https://cdn.jsdelivr.net/npm/@hemerson/design-system@0.2/dist/glass.js";
+
+      enableGlassRefraction();
+    </script>
   </head>
 
   <body class="hds-root">
